@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newsletter Signup Modal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page" id="page">
+    <p class="brand">Tidepool Notes</p>
+    <h1>Small CSS and JavaScript tricks that save an afternoon</h1>
+    <p>Stay on this page for a few seconds and a signup modal will appear. Close it with the × button, the “No thanks” link, the Esc key, or by clicking outside it.</p>
+    <p class="hint">After you close it, it stays away for 7 days. After you subscribe, it never comes back. Use the button to test again.</p>
+    <button class="reset" id="reset" type="button">Reset demo</button>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" aria-describedby="m-desc">
+      <button class="close" id="close" type="button" aria-label="Close signup">&times;</button>
+
+      <div id="signup-view">
+        <h2 id="m-title">One front-end tip, every Friday</h2>
+        <p id="m-desc">Short, practical lessons in HTML, CSS and JavaScript. No spam, and you can leave any time.</p>
+        <form id="form" novalidate>
+          <label for="email">Email address</label>
+          <input id="email" type="email" name="email" autocomplete="email" inputmode="email"
+                 placeholder="you@example.com" aria-describedby="msg" required>
+          <p class="msg" id="msg" role="alert"></p>
+          <div class="actions">
+            <button class="submit" id="submit" type="submit">Subscribe</button>
+            <button class="later" id="later" type="button">No thanks</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="success-view" hidden>
+        <h2>You’re subscribed</h2>
+        <p>Check your inbox for a confirmation email. Your first tip arrives on Friday.</p>
+        <button class="submit" id="done" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
